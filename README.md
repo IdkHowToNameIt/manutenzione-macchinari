@@ -26,7 +26,6 @@ Manutenzione-macchinari/
 ├── pyproject.toml             pacchetto src/ installabile in editable
 ├── config/                    project.yaml, feature_schema.json
 ├── data-input/                CSV assegnati (dataset e richieste)
-├── consegna/                  consegna e istruzioni originali
 ├── src/manutenzione/          codice del progetto
 │   ├── config.py              caricamento configurazione
 │   ├── contracts.py           schema feature, fingerprint, controlli
