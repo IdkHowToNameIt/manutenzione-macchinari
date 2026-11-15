@@ -1,6 +1,6 @@
 # Riepilogo delle evidenze
 
-Generato il 2026-11-15T14:25:59+00:00 da `scripts/10_riepilogo_evidenze.py`.
+Generato il 2026-11-15T14:28:07+00:00 da `scripts/10_riepilogo_evidenze.py`.
 
 ## Dati (S1)
 
@@ -52,8 +52,8 @@ Modalita': attivazione_documentata_dopo_gate
 | predizione dopo il ripristino | 200 | v1 | `8707d4c4859f423c86a0ba9b007a8661` |
 | richiesta incompleta | 422 | - | `-` |
 
-Error rate del drill: 0.25 (1 errori su 4 richieste).
-Tutti i controlli superati: True.
+Error rate del drill: 0.25 (1 errore su 4 richieste).
+Tutti i controlli superati: si.
 
 ## Spiegazioni SHAP della candidata v2
 

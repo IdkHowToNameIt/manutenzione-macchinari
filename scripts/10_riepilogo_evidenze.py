@@ -149,12 +149,13 @@ def main() -> None:
             f"| {step.get('passo')} | {step.get('status_code')} | {served} | `{run_id}` |"
         )
     summary = drill.get("riepilogo", {})
+    errors_label = "errore" if summary.get("errori_http") == 1 else "errori"
     lines.extend(
         [
             "",
             f"Error rate del drill: {summary.get('error_rate_drill')} "
-            f"({summary.get('errori_http')} errori su {summary.get('predizioni')} richieste).",
-            f"Tutti i controlli superati: {summary.get('tutti_i_controlli_superati')}.",
+            f"({summary.get('errori_http')} {errors_label} su {summary.get('predizioni')} richieste).",
+            f"Tutti i controlli superati: {'si' if summary.get('tutti_i_controlli_superati') else 'no'}.",
         ]
     )
 
