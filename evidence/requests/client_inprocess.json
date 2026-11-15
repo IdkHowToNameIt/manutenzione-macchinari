@@ -1,0 +1,153 @@
+{
+  "prova": "client in-process (FastAPI TestClient, nessuna rete)",
+  "health": {
+    "status": "ok",
+    "model_version": "v1",
+    "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+    "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+    "feature_count": 30,
+    "decision_threshold": 0.5,
+    "selection_source": "active_version",
+    "started_at": "2026-11-15T14:13:33+00:00"
+  },
+  "risposte": [
+    {
+      "request_id_csv": "req_01",
+      "model_version_attesa": "v1",
+      "expected_status": 200,
+      "status_code": 200,
+      "request_id_risposta": "818b77d613774cef89e670729d59aa06",
+      "model_version_risposta": "v1",
+      "body": {
+        "prediction": 1,
+        "probability_target_1": 0.5296081231958204,
+        "decision_threshold": 0.5,
+        "model_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "request_id": "818b77d613774cef89e670729d59aa06"
+      }
+    },
+    {
+      "request_id_csv": "req_02",
+      "model_version_attesa": "v2",
+      "expected_status": 200,
+      "status_code": 200,
+      "request_id_risposta": "c4af6261147a4bc9bf634e1d01912cc7",
+      "model_version_risposta": "v1",
+      "body": {
+        "prediction": 0,
+        "probability_target_1": 0.3814318335457966,
+        "decision_threshold": 0.5,
+        "model_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "request_id": "c4af6261147a4bc9bf634e1d01912cc7"
+      }
+    },
+    {
+      "request_id_csv": "req_03",
+      "model_version_attesa": "v1",
+      "expected_status": 200,
+      "status_code": 200,
+      "request_id_risposta": "06fe251d3a554c8d8ae5af97fa1410af",
+      "model_version_risposta": "v1",
+      "body": {
+        "prediction": 0,
+        "probability_target_1": 0.1742550540105038,
+        "decision_threshold": 0.5,
+        "model_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "request_id": "06fe251d3a554c8d8ae5af97fa1410af"
+      }
+    },
+    {
+      "request_id_csv": "req_04",
+      "model_version_attesa": "v1",
+      "expected_status": 422,
+      "status_code": 422,
+      "request_id_risposta": "f0a844ba100e4068920fa1a7cbdc0322",
+      "model_version_risposta": "v1",
+      "body": {
+        "detail": [
+          {
+            "type": "too_short",
+            "loc": [
+              "body",
+              "features"
+            ],
+            "msg": "List should have at least 30 items after validation, not 29",
+            "input": [
+              61.893,
+              96.838,
+              56.974,
+              96.838,
+              10.294,
+              78.672,
+              3.477,
+              6.287,
+              75.577,
+              4.332,
+              14.0,
+              21.088,
+              9173.111,
+              1076.036,
+              0.0,
+              15.431,
+              853.0,
+              6.44,
+              53.273,
+              82.1,
+              20.53,
+              15.449,
+              14.0,
+              7.187,
+              17.0,
+              1.0,
+              3.0,
+              7.954,
+              84.65
+            ],
+            "ctx": {
+              "field_type": "List",
+              "min_length": 30,
+              "actual_length": 29
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "metrics_prima": {
+    "window_minutes": 15.0,
+    "generated_at": "2026-11-15T14:13:33+00:00",
+    "requests_total": 0,
+    "errors_total": 0,
+    "error_rate": 0.0,
+    "p95_ms": null,
+    "p50_ms": null,
+    "by_version": {},
+    "note": "Finestra scorrevole su POST /predict; errori = stato HTTP >= 400; p95 con interpolazione lineare (numpy.percentile)."
+  },
+  "metrics_dopo": {
+    "window_minutes": 15.0,
+    "generated_at": "2026-11-15T14:13:33+00:00",
+    "requests_total": 4,
+    "errors_total": 1,
+    "error_rate": 0.25,
+    "p95_ms": 10.643,
+    "p50_ms": 0.941,
+    "by_version": {
+      "v1": {
+        "count": 4,
+        "errors": 1,
+        "p95_ms": 10.643
+      }
+    },
+    "note": "Finestra scorrevole su POST /predict; errori = stato HTTP >= 400; p95 con interpolazione lineare (numpy.percentile)."
+  },
+  "controlli": {
+    "stati_coerenti_con_il_csv": true,
+    "identita_versione_e_run": true,
+    "request_id_presente_nei_log": true,
+    "health_ha_versione_e_run_id": true
+  }
+}
