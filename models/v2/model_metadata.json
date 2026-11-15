@@ -1,0 +1,133 @@
+{
+  "run_id": "474c37426a8b42578626e490ad9192c6",
+  "registered_by": "Matteo",
+  "model_family": "random_forest",
+  "model_key": "random_forest",
+  "hyperparameters": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 4,
+    "max_features": "sqrt",
+    "class_weight": "balanced",
+    "n_jobs": -1
+  },
+  "hypothesis": "Candidata non lineare: gli effetti termici e di vibrazione si combinano in modo non lineare, quindi un insieme di alberi con pesi di classe bilanciati puo' separare meglio i macchinari a rischio.",
+  "notes": "Candidata non lineare. La soglia e' calibrata con 5 fold sul train per rispettare il recall minimo richiesto dal gate.",
+  "decision_threshold": 0.46,
+  "threshold_selection": {
+    "selected_threshold": 0.46,
+    "selection_method": "max_accuracy_con_recall_minimo_out_of_fold",
+    "min_recall_target_1": 0.65,
+    "out_of_fold_accuracy": 0.68,
+    "out_of_fold_recall": 0.6688963210702341,
+    "cross_validation_folds": 5,
+    "threshold_grid": "0.05-0.95 passo 0.01"
+  },
+  "training": {
+    "dataset_path": "data-input/dataset/dataset.csv",
+    "dataset_fingerprint": "af700d09fac13f09e5b0b8f8713cc0c9d3dca433a8f53c50273fe4647d1c5f3d",
+    "row_count": 1000,
+    "train_rows": 800,
+    "validation_rows": 200,
+    "train_class_counts": {
+      "0": 501,
+      "1": 299
+    },
+    "validation_class_counts": {
+      "0": 125,
+      "1": 75
+    },
+    "random_state": 42,
+    "train_split": "train",
+    "validation_split": "validation",
+    "validation_record_ids_fingerprint": "43c24f914363d8e578f4ec71505d8bb2556ab0988dc7bca23aea5e0b80672d9a"
+  },
+  "validation_metrics": {
+    "n_samples": 200,
+    "positive_rate_observed": 0.375,
+    "positive_rate_predicted": 0.405,
+    "accuracy": 0.71,
+    "recall_target_1": 0.6533333333333333,
+    "precision_target_1": 0.6049382716049383,
+    "f1_target_1": 0.6282051282051282,
+    "recall_target_0": 0.744,
+    "roc_auc": 0.75712,
+    "decision_threshold": 0.46,
+    "confusion_matrix": {
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          93,
+          32
+        ],
+        [
+          26,
+          49
+        ]
+      ],
+      "true_negative": 93,
+      "false_positive": 32,
+      "false_negative": 26,
+      "true_positive": 49
+    }
+  },
+  "target_definition": {
+    "positive_label": "guasto con intervento entro 7 giorni",
+    "negative_label": "nessun guasto nei 7 giorni successivi"
+  },
+  "registered_at": "2026-11-15T14:16:06+00:00",
+  "model_version": "v2",
+  "artifact_file": "model.pkl",
+  "artifact_format": "joblib-scikit-learn-pipeline",
+  "artifact_fingerprint": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+  "created_at": "2026-11-15T14:16:06+00:00",
+  "feature_schema": {
+    "version": "1.0",
+    "fingerprint": "f6fc3f70fa153777a141faee4100bba8591e5aef4f71d6a025c9c97998eb177a",
+    "count": 30,
+    "names": [
+      "temperatura_cuscinetto_media_c",
+      "temperatura_motore_media_c",
+      "temperatura_olio_media_c",
+      "picco_temperatura_24h_c",
+      "incremento_temperatura_24h_c",
+      "minuti_sopra_soglia_termica_24h",
+      "vibrazione_rms_mm_s",
+      "vibrazione_picco_mm_s",
+      "rumore_medio_db",
+      "oscillazione_velocita_pct",
+      "impulsi_anomali_24h",
+      "asimmetria_vibrazioni_pct",
+      "ore_utilizzo_totali",
+      "ore_da_cambio_cuscinetto",
+      "ore_da_cambio_olio",
+      "particelle_olio_ppm",
+      "cicli_avvio_totali",
+      "spessore_residuo_componente_mm",
+      "carico_medio_pct",
+      "picco_carico_pct",
+      "corrente_media_a",
+      "ore_marcia_ultime_24h",
+      "avvii_ultime_24h",
+      "pressione_media_bar",
+      "giorni_da_ultima_manutenzione",
+      "interventi_rinviati_90g",
+      "allarmi_precedenti_30g",
+      "ore_fermo_precedenti_90g",
+      "manutenzioni_programmate_completate_pct",
+      "livello_lubrificante_pct"
+    ]
+  },
+  "software_versions": {
+    "python": "3.12.16",
+    "platform": "Windows-2025Server-10.0.26100-SP0",
+    "numpy": "2.5.4",
+    "scikit_learn": "1.9.1",
+    "joblib": "1.6.0",
+    "mlflow": "3.18.0",
+    "fastapi": "0.163.1"
+  }
+}

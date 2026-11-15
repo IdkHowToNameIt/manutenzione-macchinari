@@ -1,0 +1,52 @@
+{
+  "model_version": "v2",
+  "mlflow_run_id": "474c37426a8b42578626e490ad9192c6",
+  "mlflow_experiment": "manutenzione-predittiva",
+  "mlflow_tracking_uri": "sqlite:///mlflow.db",
+  "registered_at": "2026-11-15T14:16:06+00:00",
+  "artifact_fingerprint": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+  "dataset_fingerprint": "af700d09fac13f09e5b0b8f8713cc0c9d3dca433a8f53c50273fe4647d1c5f3d",
+  "feature_schema_fingerprint": "f6fc3f70fa153777a141faee4100bba8591e5aef4f71d6a025c9c97998eb177a",
+  "model_family": "random_forest",
+  "hyperparameters": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 4,
+    "max_features": "sqrt",
+    "class_weight": "balanced",
+    "n_jobs": -1
+  },
+  "decision_threshold": 0.46,
+  "evidence": {
+    "n_samples": 200,
+    "positive_rate_observed": 0.375,
+    "positive_rate_predicted": 0.405,
+    "accuracy": 0.71,
+    "recall_target_1": 0.6533333333333333,
+    "precision_target_1": 0.6049382716049383,
+    "f1_target_1": 0.6282051282051282,
+    "recall_target_0": 0.744,
+    "roc_auc": 0.75712,
+    "decision_threshold": 0.46,
+    "confusion_matrix": {
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          93,
+          32
+        ],
+        [
+          26,
+          49
+        ]
+      ],
+      "true_negative": 93,
+      "false_positive": 32,
+      "false_negative": 26,
+      "true_positive": 49
+    }
+  }
+}

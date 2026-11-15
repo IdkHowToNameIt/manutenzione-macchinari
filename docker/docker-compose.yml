@@ -1,0 +1,15 @@
+services:
+  api-manutenzione:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: manutenzione-predittiva-api:1.0.0
+    container_name: manutenzione-predittiva-api
+    ports:
+      - "8000:8000"
+    environment:
+      # In locale il default va bene; in un ambiente condiviso impostare un token proprio.
+      MANUTENZIONE_ADMIN_TOKEN: ${MANUTENZIONE_ADMIN_TOKEN:-local-admin-token}
+    volumes:
+      - ../logs:/app/logs
+    restart: "no"

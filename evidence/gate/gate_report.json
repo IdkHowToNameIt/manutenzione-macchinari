@@ -1,0 +1,150 @@
+{
+  "decisione": "accettata",
+  "decisa_il": "2026-11-15T14:18:25+00:00",
+  "candidata": "v2",
+  "baseline": "v1",
+  "requisiti": [
+    {
+      "id": "R1",
+      "requisito": "Accuratezza della candidata non inferiore alla baseline",
+      "misura": "v2 0.7100 vs v1 0.6650",
+      "soglia": "v2 >= v1",
+      "esito": "superato",
+      "motivazione": "Il protocollo comune richiede accuratezza candidata almeno pari alla baseline."
+    },
+    {
+      "id": "R2",
+      "requisito": "Recall sulla classe 1 (guasto entro 7 giorni)",
+      "misura": "v2 0.6533",
+      "soglia": ">= 0.65",
+      "esito": "superato",
+      "motivazione": "Soglia a priori sulla classe 1: un falso negativo e' un intervento mancato."
+    },
+    {
+      "id": "R3",
+      "requisito": "Recall sulla classe 1 non inferiore alla baseline",
+      "misura": "v2 0.6533 vs v1 0.3467",
+      "soglia": "v2 >= v1",
+      "esito": "superato",
+      "motivazione": "Un guadagno di accuratezza non deve ridurre la copertura dei guasti."
+    },
+    {
+      "id": "R4",
+      "requisito": "Latenza p95 della candidata su 30 misure locali",
+      "misura": "57.87 ms",
+      "soglia": "<= 120 ms",
+      "esito": "superato",
+      "motivazione": "Limite del protocollo comune per la risposta di predict."
+    },
+    {
+      "id": "R5",
+      "requisito": "Error rate della candidata su 30 misure locali",
+      "misura": "0.0000",
+      "soglia": "<= 0.01",
+      "esito": "superato",
+      "motivazione": "Errori HTTP >= 400 sulle richieste valide della probe."
+    },
+    {
+      "id": "R6",
+      "requisito": "Probe v2 attribuita all'artefatto registrato",
+      "misura": "fingerprint misurato 0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+      "soglia": "uguale al fingerprint dei metadati v2",
+      "esito": "superato",
+      "motivazione": "Una probe di un altro artefatto non autorizza l'attivazione."
+    },
+    {
+      "id": "R7",
+      "requisito": "Stesso dataset, stessi ID di validation e stesso schema",
+      "misura": {
+        "stesso_dataset": true,
+        "stessi_id_validation": true,
+        "stesso_schema": true
+      },
+      "soglia": "tutte le uguaglianze vere",
+      "esito": "superato",
+      "motivazione": "Il confronto tra versioni e' valido solo a parita' di dati e protocollo."
+    }
+  ],
+  "requisiti_bloccanti": [],
+  "confronto": {
+    "accuratezza": {
+      "v1": 0.665,
+      "v2": 0.71
+    },
+    "recall_target_1": {
+      "v1": 0.3466666666666667,
+      "v2": 0.6533333333333333
+    },
+    "precision_target_1": {
+      "v1": 0.5909090909090909,
+      "v2": 0.6049382716049383
+    },
+    "roc_auc": {
+      "v1": 0.7181866666666666,
+      "v2": 0.75712
+    },
+    "matrice_confusione": {
+      "v1": {
+        "labels": [
+          0,
+          1
+        ],
+        "matrix": [
+          [
+            107,
+            18
+          ],
+          [
+            49,
+            26
+          ]
+        ],
+        "true_negative": 107,
+        "false_positive": 18,
+        "false_negative": 49,
+        "true_positive": 26
+      },
+      "v2": {
+        "labels": [
+          0,
+          1
+        ],
+        "matrix": [
+          [
+            93,
+            32
+          ],
+          [
+            26,
+            49
+          ]
+        ],
+        "true_negative": 93,
+        "false_positive": 32,
+        "false_negative": 26,
+        "true_positive": 49
+      }
+    },
+    "soglia_decisione": {
+      "v1": 0.5,
+      "v2": 0.46
+    },
+    "p95_ms": {
+      "v1": 2.856,
+      "v2": 57.87
+    },
+    "error_rate": {
+      "v1": 0.0,
+      "v2": 0.0
+    },
+    "run_id": {
+      "v1": "8707d4c4859f423c86a0ba9b007a8661",
+      "v2": "474c37426a8b42578626e490ad9192c6"
+    },
+    "artifact_fingerprint": {
+      "v1": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+      "v2": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799"
+    }
+  },
+  "nota": "La decisione del gate non cambia la versione attiva: l'attivazione e' un'operazione separata e registrata nel registro delle transizioni."
+}

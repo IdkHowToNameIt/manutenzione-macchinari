@@ -1,0 +1,245 @@
+{
+  "eseguito_il": "2026-11-15T14:19:03+00:00",
+  "decisione_gate": "accettata",
+  "modalita": "attivazione_documentata_dopo_gate",
+  "nota_ripristino": "Il gate ha accettato v2; l'attivazione documentata e' stata seguita da un ripristino esplicito a v1 per lasciare lo stato finale sulla baseline richiesta.",
+  "health_iniziale": {
+    "status": "ok",
+    "model_version": "v1",
+    "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+    "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+    "feature_count": 30,
+    "decision_threshold": 0.5,
+    "selection_source": "active_version",
+    "started_at": "2026-11-15T14:19:03+00:00"
+  },
+  "passi": [
+    {
+      "passo": "predizione con v1",
+      "request_id_csv": "req_01",
+      "stato_atteso": 200,
+      "status_code": 200,
+      "request_id": "61657835a45144bea57df2ccee684968",
+      "model_version_header": "v1",
+      "duration_ms": 10.54,
+      "body": {
+        "prediction": 1,
+        "probability_target_1": 0.5296081231958204,
+        "decision_threshold": 0.5,
+        "model_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "request_id": "61657835a45144bea57df2ccee684968"
+      }
+    },
+    {
+      "passo": "attivazione v2",
+      "endpoint": "/admin/activate",
+      "status_code": 200,
+      "request_id": "bf2914fe0dd648689c45e7b869153480",
+      "duration_ms": 119.777,
+      "body": {
+        "action": "activate",
+        "previous_version": "v1",
+        "active_version": "v2",
+        "run_id": "474c37426a8b42578626e490ad9192c6",
+        "artifact_fingerprint": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+        "decision_threshold": 0.46,
+        "served_version": "v2",
+        "transition_timestamp": "2026-11-15T14:19:03+00:00"
+      }
+    },
+    {
+      "passo": "predizione con v2",
+      "request_id_csv": "req_02",
+      "stato_atteso": 200,
+      "status_code": 200,
+      "request_id": "f5115bb995b9403da4f91a9affafe5a1",
+      "model_version_header": "v2",
+      "duration_ms": 41.605,
+      "body": {
+        "prediction": 1,
+        "probability_target_1": 0.5295519757757315,
+        "decision_threshold": 0.46,
+        "model_version": "v2",
+        "run_id": "474c37426a8b42578626e490ad9192c6",
+        "request_id": "f5115bb995b9403da4f91a9affafe5a1"
+      }
+    },
+    {
+      "passo": "rollback a v1",
+      "endpoint": "/admin/rollback",
+      "status_code": 200,
+      "request_id": "3236d4c535fb45bdbf0d2630a3505097",
+      "duration_ms": 8.237,
+      "body": {
+        "action": "rollback",
+        "previous_version": "v2",
+        "active_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+        "decision_threshold": 0.5,
+        "served_version": "v1",
+        "transition_timestamp": "2026-11-15T14:19:03+00:00"
+      }
+    },
+    {
+      "passo": "predizione dopo il ripristino",
+      "request_id_csv": "req_03",
+      "stato_atteso": 200,
+      "status_code": 200,
+      "request_id": "9b87fbf4bd134f678025dc98c5c9d8db",
+      "model_version_header": "v1",
+      "duration_ms": 2.134,
+      "body": {
+        "prediction": 0,
+        "probability_target_1": 0.1742550540105038,
+        "decision_threshold": 0.5,
+        "model_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "request_id": "9b87fbf4bd134f678025dc98c5c9d8db"
+      }
+    },
+    {
+      "passo": "richiesta incompleta",
+      "request_id_csv": "req_04",
+      "stato_atteso": 422,
+      "status_code": 422,
+      "request_id": "d1f0d0216a554a408cedfe8d719ecc89",
+      "model_version_header": "v1",
+      "duration_ms": 1.905,
+      "body": {
+        "detail": [
+          {
+            "location": [
+              "body",
+              "features"
+            ],
+            "message": "List should have at least 30 items after validation, not 29",
+            "type": "too_short"
+          }
+        ],
+        "request_id": "d1f0d0216a554a408cedfe8d719ecc89"
+      }
+    }
+  ],
+  "health_finale": {
+    "status": "ok",
+    "model_version": "v1",
+    "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+    "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+    "feature_count": 30,
+    "decision_threshold": 0.5,
+    "selection_source": "active_version",
+    "started_at": "2026-11-15T14:19:03+00:00"
+  },
+  "versions_finali": {
+    "active_version": "v1",
+    "previous_version": "v2",
+    "versions": [
+      {
+        "model_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "model_family": "logistic_regression",
+        "created_at": "2026-11-15T14:09:45+00:00",
+        "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+        "accuracy": 0.665,
+        "recall_target_1": 0.3466666666666667
+      },
+      {
+        "model_version": "v2",
+        "run_id": "474c37426a8b42578626e490ad9192c6",
+        "model_family": "random_forest",
+        "created_at": "2026-11-15T14:16:06+00:00",
+        "artifact_fingerprint": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+        "accuracy": 0.71,
+        "recall_target_1": 0.6533333333333333
+      }
+    ]
+  },
+  "metrics_finali_drill": {
+    "window_minutes": 15.0,
+    "generated_at": "2026-11-15T14:19:03+00:00",
+    "requests_total": 4,
+    "errors_total": 1,
+    "error_rate": 0.25,
+    "p95_ms": 35.26,
+    "p50_ms": 5.151,
+    "by_version": {
+      "v1": {
+        "count": 3,
+        "errors": 1,
+        "p95_ms": 8.397
+      },
+      "v2": {
+        "count": 1,
+        "errors": 0,
+        "p95_ms": 39.857
+      }
+    },
+    "note": "Finestra scorrevole su POST /predict; errori = stato HTTP >= 400; p95 con interpolazione lineare (numpy.percentile)."
+  },
+  "pointer_finale": {
+    "active_version": "v1",
+    "previous_version": "v2",
+    "updated_at": "2026-11-15T14:19:03+00:00",
+    "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+    "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+    "history": [
+      {
+        "timestamp": "2026-11-15T14:09:45+00:00",
+        "action": "initial_activation",
+        "actor": "Matteo",
+        "from_version": null,
+        "to_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+        "feature_schema_fingerprint": "f6fc3f70fa153777a141faee4100bba8591e5aef4f71d6a025c9c97998eb177a",
+        "dataset_fingerprint": "af700d09fac13f09e5b0b8f8713cc0c9d3dca433a8f53c50273fe4647d1c5f3d",
+        "reason": "prima versione registrata: baseline di riferimento"
+      },
+      {
+        "timestamp": "2026-11-15T14:19:03+00:00",
+        "action": "activate",
+        "actor": "Andrea",
+        "from_version": "v1",
+        "to_version": "v2",
+        "run_id": "474c37426a8b42578626e490ad9192c6",
+        "artifact_fingerprint": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+        "feature_schema_fingerprint": "f6fc3f70fa153777a141faee4100bba8591e5aef4f71d6a025c9c97998eb177a",
+        "dataset_fingerprint": "af700d09fac13f09e5b0b8f8713cc0c9d3dca433a8f53c50273fe4647d1c5f3d",
+        "reason": "gate accettata: attivazione_documentata_dopo_gate"
+      },
+      {
+        "timestamp": "2026-11-15T14:19:03+00:00",
+        "action": "rollback",
+        "actor": "Andrea",
+        "from_version": "v2",
+        "to_version": "v1",
+        "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+        "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+        "feature_schema_fingerprint": "f6fc3f70fa153777a141faee4100bba8591e5aef4f71d6a025c9c97998eb177a",
+        "dataset_fingerprint": "af700d09fac13f09e5b0b8f8713cc0c9d3dca433a8f53c50273fe4647d1c5f3d",
+        "reason": "ripristino finale richiesto dalla consegna (stato finale su baseline)"
+      }
+    ]
+  },
+  "riepilogo": {
+    "predizioni": 4,
+    "errori_http": 1,
+    "error_rate_drill": 0.25,
+    "controlli": {
+      "stati_coerenti_con_il_csv": true,
+      "v1_iniziale_servita": true,
+      "attivazione_ha_caricato_v2": true,
+      "predizione_v2_con_run_v2": true,
+      "rollback_ha_caricato_v1": true,
+      "predizione_dopo_ripristino_con_v1": true,
+      "richiesta_incompleta_respinta": true,
+      "health_finale_su_baseline": true,
+      "stato_finale_v1_con_precedente_v2": true,
+      "error_rate_del_drill_0_25": true,
+      "request_id_correlati_ai_log": true
+    },
+    "tutti_i_controlli_superati": true
+  }
+}

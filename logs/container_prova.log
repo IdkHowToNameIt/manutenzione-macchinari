@@ -1,0 +1,14 @@
+INFO:     172.17.0.1:51444 - "GET /health HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51456 - "GET /schema HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51470 - "POST /predict HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51480 - "POST /admin/activate HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51494 - "POST /predict HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51510 - "POST /admin/rollback HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51514 - "POST /predict HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51520 - "POST /predict HTTP/1.1" 422 Unprocessable Entity
+INFO:     172.17.0.1:51536 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     172.17.0.1:51538 - "GET /health HTTP/1.1" 200 OK
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
