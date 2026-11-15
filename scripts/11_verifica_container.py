@@ -167,7 +167,9 @@ def main() -> None:
         log_path.write_text(
             (container_logs.stdout or "") + (container_logs.stderr or ""), encoding="utf-8"
         )
-        evidence["container_log"] = str(log_path)
+        evidence["container_log"] = Path(log_path).relative_to(
+            Path(config["project_root"])
+        ).as_posix()
         _run(["docker", "rm", "-f", CONTAINER_NAME], timeout=60)
         evidence["container_rimosso"] = True
         evidence["concluso_il"] = datetime.now(timezone.utc).isoformat(timespec="seconds")

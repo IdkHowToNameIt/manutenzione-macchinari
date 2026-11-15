@@ -90,7 +90,7 @@ def run_probe(version: str, payload: dict, config: dict, models_dir: Path) -> di
         "artifact_fingerprint_atteso": metadata["artifact_fingerprint"],
         "run_id_atteso": metadata["run_id"],
         "probe_attribuita_all_artefatto": attributable,
-        "server_log": str(log_path),
+        "server_log": Path(log_path).relative_to(Path(config["project_root"])).as_posix(),
     }
 
 

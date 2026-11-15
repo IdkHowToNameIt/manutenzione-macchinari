@@ -5,10 +5,29 @@ __pycache__/
 .pytest_cache/
 *.egg-info/
 .idea/
+.vscode/
 
 # Tracking MLflow locale: le evidenze essenziali vengono copiate in evidence/
 mlruns/
 mlflow.db
 
-# Artefatti temporanei
+# Documenti interni del gruppo, non da pubblicare
+docs/divisione-lavoro.md
+docs/presentazione.md
+
+# Segreti e configurazioni locali
+.env
+.env.*
+*.pem
+*.key
+*.token
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build e artefatti temporanei
+build/
+dist/
 *.tmp

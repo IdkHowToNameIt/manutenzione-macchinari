@@ -16,11 +16,21 @@ from typing import Any
 
 import numpy as np
 
+from .config import PROJECT_ROOT
 from .contracts import FeatureSchema, file_fingerprint
 
 EXPECTED_SPLITS = ("train", "validation")
 EXPECTED_TARGETS = (0, 1)
 MAX_REPORTED_PROBLEMS = 12
+
+
+def _display_path(path: Path) -> str:
+    """Percorso relativo alla radice del progetto quando possibile."""
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(PROJECT_ROOT).as_posix()
+    except ValueError:
+        return str(resolved)
 
 
 class DataValidationError(Exception):
@@ -173,7 +183,7 @@ def load_dataset(
         targets=targets,
         splits=splits,
         record_ids=record_ids,
-        dataset_path=str(path.resolve()),
+        dataset_path=_display_path(path),
         dataset_fingerprint=file_fingerprint(path),
         class_counts=class_counts,
     )
