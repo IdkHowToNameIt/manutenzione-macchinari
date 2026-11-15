@@ -1,0 +1,14 @@
+# Ambiente e cache
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.idea/
+
+# Tracking MLflow locale: le evidenze essenziali vengono copiate in evidence/
+mlruns/
+mlflow.db
+
+# Artefatti temporanei
+*.tmp

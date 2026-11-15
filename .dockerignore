@@ -1,0 +1,15 @@
+.venv/
+.git/
+.idea/
+mlruns/
+mlflow.db
+logs/
+evidence/
+tests/
+docs/
+scripts/
+data-input/
+consegna/
+.pytest_cache/
+__pycache__/
+*.pyc

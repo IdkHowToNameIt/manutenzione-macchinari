@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "manutenzione-predittiva"
+version = "1.0.0"
+description = "Servizio di manutenzione predittiva: guasto con intervento entro 7 giorni"
+requires-python = ">=3.12"
+# Le dipendenze di esecuzione sono elencate in requirements.txt, installato prima del pacchetto.
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

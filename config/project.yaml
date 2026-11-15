@@ -1,0 +1,43 @@
+project:
+  name: manutenzione-predittiva
+  seed: 1302
+  random_state: 42
+  experiment_name: manutenzione-predittiva
+
+# Percorsi relativi alla radice del progetto (cartella che contiene config/)
+paths:
+  dataset_csv: data-input/dataset/dataset.csv
+  requests_csv: data-input/requests/richieste_monitoraggio.csv
+  feature_schema: config/feature_schema.json
+  models_dir: models
+  logs_dir: logs
+  evidence_dir: evidence
+  # MLflow 3 richiede un backend database: usiamo SQLite locale e una cartella
+  # separata per gli artefatti delle run.
+  mlflow_tracking_uri: mlflow.db
+  mlflow_artifacts: mlruns
+
+training:
+  target_column: target
+  split_column: split
+  id_column: record_id
+  train_split: train
+  validation_split: validation
+  target_positive_label: guasto con intervento entro 7 giorni
+  target_negative_label: nessun guasto nei 7 giorni successivi
+
+service:
+  host: 127.0.0.1
+  port: 8000
+  metric_window_minutes: 15
+  probability_threshold: 0.5
+
+# Soglie del protocollo di laboratorio e del gate di rilascio
+gate:
+  max_p95_ms: 120
+  max_error_rate: 0.01
+  min_recall_target_1: 0.65
+  require_accuracy_not_lower_than_baseline: true
+  require_recall_not_lower_than_baseline: true
+  probe_warmup_requests: 3
+  probe_measured_requests: 30
