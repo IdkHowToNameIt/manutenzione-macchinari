@@ -1,0 +1,29 @@
+{
+  "riferimento": {
+    "dataset_fingerprint": "af700d09fac13f09e5b0b8f8713cc0c9d3dca433a8f53c50273fe4647d1c5f3d",
+    "train_rows": 800,
+    "statistica": "z-score robusto = (valore - mediana_train) / (1.4826 * MAD_train)",
+    "soglia": 3.0
+  },
+  "richieste": [
+    {
+      "request_id": "req_01",
+      "model_version": "v1",
+      "feature_oltre_soglia": [],
+      "max_abs_z_score": 2.597
+    },
+    {
+      "request_id": "req_02",
+      "model_version": "v2",
+      "feature_oltre_soglia": [],
+      "max_abs_z_score": 2.359
+    },
+    {
+      "request_id": "req_03",
+      "model_version": "v1",
+      "feature_oltre_soglia": [],
+      "max_abs_z_score": 2.423
+    }
+  ],
+  "limiti": "Solo tre payload validi: il controllo segnala valori lontani dalla distribuzione di training, non un drift statistico consolidato."
+}
