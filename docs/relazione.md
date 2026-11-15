@@ -413,10 +413,10 @@ retraining periodico con lo stesso protocollo di gate.
 | Andrea | Registro, gate, attivazione/rollback, Docker | riletto da Nicolo |
 | Nicolo | README, relazione, presentazione, riepilogo evidenze | riletto da Andrea |
 
-Il dettaglio delle attivita', dell'ordine di lavoro e delle checklist di
-revisione e' in `docs/divisione-lavoro.md`. La presentazione segue il percorso
+Il dettaglio delle attivita' e delle checklist di revisione e' in un documento
+interno del gruppo, non pubblicato. La presentazione segue il percorso
 problema → dati → baseline → servizio → candidata → decisione → ripristino →
-limiti (`docs/presentazione.md`).
+limiti.
 
 ## 15. Evidenze di riferimento
 

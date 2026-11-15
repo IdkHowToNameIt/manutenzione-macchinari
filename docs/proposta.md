@@ -58,8 +58,8 @@ recall minimo sulla classe 1, non solo una buona accuratezza.
 | Andrea | Registro e rilascio: versioni, fingerprint, gate operativo, attivazione e rollback, Docker |
 | Nicolo | Documentazione e verifica: README, relazione, presentazione, revisione delle evidenze |
 
-Il dettaglio di compiti, revisioni incrociate e ordine di lavoro e' in
-[docs/divisione-lavoro.md](divisione-lavoro.md).
+Il dettaglio di compiti e revisioni incrociate e' in un documento interno del
+gruppo, non incluso nel repository.
 
 ## Percorso del progetto
 

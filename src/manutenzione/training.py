@@ -319,11 +319,15 @@ def train_and_register(
 
     evidence_directory = Path(config["paths"]["evidence_dir"]) / "training"
     evidence_directory.mkdir(parents=True, exist_ok=True)
+    # Evidenza portabile: niente percorsi assoluti che espongano l'ambiente locale.
+    tracking_uri = config["paths"]["mlflow_tracking_uri"]
+    if tracking_uri.startswith("sqlite:///"):
+        tracking_uri = f"sqlite:///{Path(tracking_uri.removeprefix('sqlite:///')).name}"
     evidence = {
         "model_version": version,
         "mlflow_run_id": run_id,
         "mlflow_experiment": project_config["experiment_name"],
-        "mlflow_tracking_uri": config["paths"]["mlflow_tracking_uri"],
+        "mlflow_tracking_uri": tracking_uri,
         "registered_at": metadata["registered_at"],
         "artifact_fingerprint": metadata["artifact_fingerprint"],
         "dataset_fingerprint": bundle.dataset_fingerprint,
