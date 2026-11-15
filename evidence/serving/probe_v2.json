@@ -1,0 +1,86 @@
+{
+  "model_version": "v2",
+  "probe": {
+    "base_url": "http://127.0.0.1:49329",
+    "started_at": "2026-11-15T14:18:11+00:00",
+    "finished_at": "2026-11-15T14:18:15+00:00",
+    "warmup_requests": 3,
+    "measured_requests": 30,
+    "payload_note": "payload valido assegnato dal CSV delle richieste",
+    "latencies_ms": [
+      40.483,
+      39.58,
+      38.72,
+      39.087,
+      39.507,
+      39.049,
+      38.585,
+      40.662,
+      37.828,
+      38.719,
+      41.492,
+      41.005,
+      39.536,
+      38.438,
+      37.752,
+      38.77,
+      38.475,
+      50.574,
+      49.638,
+      49.756,
+      38.854,
+      40.034,
+      39.744,
+      39.978,
+      38.618,
+      39.733,
+      50.328,
+      57.87,
+      58.983,
+      50.993
+    ],
+    "p50_ms": 39.58,
+    "p95_ms": 57.87,
+    "status_codes": {
+      "200": 30
+    },
+    "errors": 0,
+    "error_rate": 0.0
+  },
+  "environment": {
+    "python": "3.12.16",
+    "platform": "Windows-2025Server-10.0.26100-SP0",
+    "cpu_count": 8
+  },
+  "health": {
+    "status": "ok",
+    "model_version": "v2",
+    "run_id": "474c37426a8b42578626e490ad9192c6",
+    "artifact_fingerprint": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+    "feature_count": 30,
+    "decision_threshold": 0.46,
+    "selection_source": "forced_version",
+    "started_at": "2026-11-15T14:18:12+00:00"
+  },
+  "server_metrics": {
+    "window_minutes": 15.0,
+    "generated_at": "2026-11-15T14:18:15+00:00",
+    "requests_total": 33,
+    "errors_total": 0,
+    "error_rate": 0.0,
+    "p95_ms": 53.985,
+    "p50_ms": 38.077,
+    "by_version": {
+      "v2": {
+        "count": 33,
+        "errors": 0,
+        "p95_ms": 53.985
+      }
+    },
+    "note": "Finestra scorrevole su POST /predict; errori = stato HTTP >= 400; p95 con interpolazione lineare (numpy.percentile)."
+  },
+  "artifact_fingerprint_atteso": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+  "run_id_atteso": "474c37426a8b42578626e490ad9192c6",
+  "probe_attribuita_all_artefatto": true,
+  "server_log": "logs/probe_server_v2.log"
+}

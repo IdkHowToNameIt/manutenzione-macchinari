@@ -1,0 +1,86 @@
+{
+  "model_version": "v1",
+  "probe": {
+    "base_url": "http://127.0.0.1:49325",
+    "started_at": "2026-11-15T14:18:09+00:00",
+    "finished_at": "2026-11-15T14:18:11+00:00",
+    "warmup_requests": 3,
+    "measured_requests": 30,
+    "payload_note": "payload valido assegnato dal CSV delle richieste",
+    "latencies_ms": [
+      1.763,
+      1.765,
+      1.747,
+      1.689,
+      2.061,
+      2.856,
+      2.707,
+      3.095,
+      2.052,
+      1.811,
+      1.672,
+      1.731,
+      1.709,
+      1.741,
+      1.737,
+      1.694,
+      1.706,
+      1.679,
+      1.74,
+      1.827,
+      1.849,
+      1.795,
+      1.742,
+      1.693,
+      1.748,
+      1.816,
+      1.695,
+      1.64,
+      1.629,
+      1.624
+    ],
+    "p50_ms": 1.741,
+    "p95_ms": 2.856,
+    "status_codes": {
+      "200": 30
+    },
+    "errors": 0,
+    "error_rate": 0.0
+  },
+  "environment": {
+    "python": "3.12.16",
+    "platform": "Windows-2025Server-10.0.26100-SP0",
+    "cpu_count": 8
+  },
+  "health": {
+    "status": "ok",
+    "model_version": "v1",
+    "run_id": "8707d4c4859f423c86a0ba9b007a8661",
+    "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+    "feature_count": 30,
+    "decision_threshold": 0.5,
+    "selection_source": "forced_version",
+    "started_at": "2026-11-15T14:18:11+00:00"
+  },
+  "server_metrics": {
+    "window_minutes": 15.0,
+    "generated_at": "2026-11-15T14:18:11+00:00",
+    "requests_total": 33,
+    "errors_total": 0,
+    "error_rate": 0.0,
+    "p95_ms": 1.451,
+    "p50_ms": 0.847,
+    "by_version": {
+      "v1": {
+        "count": 33,
+        "errors": 0,
+        "p95_ms": 1.451
+      }
+    },
+    "note": "Finestra scorrevole su POST /predict; errori = stato HTTP >= 400; p95 con interpolazione lineare (numpy.percentile)."
+  },
+  "artifact_fingerprint_atteso": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+  "run_id_atteso": "8707d4c4859f423c86a0ba9b007a8661",
+  "probe_attribuita_all_artefatto": true,
+  "server_log": "logs/probe_server_v1.log"
+}

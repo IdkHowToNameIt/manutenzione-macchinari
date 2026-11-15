@@ -1,0 +1,40 @@
+INFO:     Started server process [3860]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:49329 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49333 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "POST /predict HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "GET /metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49333 - "GET /health HTTP/1.1" 200 OK
