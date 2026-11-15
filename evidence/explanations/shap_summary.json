@@ -1,0 +1,184 @@
+{
+  "model_version": "v2",
+  "run_id": "474c37426a8b42578626e490ad9192c6",
+  "artifact_fingerprint": "0c1f3e2530b46e9094632f103209be352042e5178bf8af9fe7538859192bb799",
+  "validation_rows": 200,
+  "top_features": [
+    {
+      "feature": "ore_marcia_ultime_24h",
+      "mean_abs_shap": 0.03690016134518183,
+      "mean_shap": -0.0025080593430029537
+    },
+    {
+      "feature": "carico_medio_pct",
+      "mean_abs_shap": 0.03133980462270802,
+      "mean_shap": -0.003417964242466665
+    },
+    {
+      "feature": "avvii_ultime_24h",
+      "mean_abs_shap": 0.0307311197763659,
+      "mean_shap": -0.006135450886032243
+    },
+    {
+      "feature": "ore_utilizzo_totali",
+      "mean_abs_shap": 0.025666192997039653,
+      "mean_shap": -0.004843120648582053
+    },
+    {
+      "feature": "manutenzioni_programmate_completate_pct",
+      "mean_abs_shap": 0.024841064265745453,
+      "mean_shap": -0.00585627529000739
+    },
+    {
+      "feature": "ore_da_cambio_cuscinetto",
+      "mean_abs_shap": 0.022088458231473523,
+      "mean_shap": -0.001346697290529378
+    },
+    {
+      "feature": "corrente_media_a",
+      "mean_abs_shap": 0.021225883695023418,
+      "mean_shap": -0.006976312757046183
+    },
+    {
+      "feature": "pressione_media_bar",
+      "mean_abs_shap": 0.021145263253874468,
+      "mean_shap": -0.0031527958206649716
+    },
+    {
+      "feature": "picco_carico_pct",
+      "mean_abs_shap": 0.020975345054552626,
+      "mean_shap": -0.003152979582174983
+    },
+    {
+      "feature": "vibrazione_rms_mm_s",
+      "mean_abs_shap": 0.01777447539152026,
+      "mean_shap": -0.004546826440382152
+    }
+  ],
+  "request_explained": {
+    "request_id": "req_02",
+    "probability_target_1": 0.5295519757757315,
+    "contributions": [
+      {
+        "feature": "manutenzioni_programmate_completate_pct",
+        "shap_value": 0.04015078734645729
+      },
+      {
+        "feature": "avvii_ultime_24h",
+        "shap_value": -0.029215513274449777
+      },
+      {
+        "feature": "asimmetria_vibrazioni_pct",
+        "shap_value": 0.023825468817120044
+      },
+      {
+        "feature": "ore_utilizzo_totali",
+        "shap_value": -0.022601335591941486
+      },
+      {
+        "feature": "ore_da_cambio_cuscinetto",
+        "shap_value": -0.02228272223556144
+      },
+      {
+        "feature": "ore_fermo_precedenti_90g",
+        "shap_value": 0.02138827584499804
+      },
+      {
+        "feature": "ore_da_cambio_olio",
+        "shap_value": 0.019858359274995747
+      },
+      {
+        "feature": "carico_medio_pct",
+        "shap_value": -0.01958540722975015
+      },
+      {
+        "feature": "ore_marcia_ultime_24h",
+        "shap_value": -0.018512637410742393
+      },
+      {
+        "feature": "particelle_olio_ppm",
+        "shap_value": -0.018010556239882496
+      },
+      {
+        "feature": "pressione_media_bar",
+        "shap_value": -0.017873529553685548
+      },
+      {
+        "feature": "incremento_temperatura_24h_c",
+        "shap_value": 0.0168182461624271
+      },
+      {
+        "feature": "giorni_da_ultima_manutenzione",
+        "shap_value": 0.015526847647478853
+      },
+      {
+        "feature": "vibrazione_rms_mm_s",
+        "shap_value": 0.015005989702413566
+      },
+      {
+        "feature": "spessore_residuo_componente_mm",
+        "shap_value": -0.013122360487516308
+      },
+      {
+        "feature": "temperatura_motore_media_c",
+        "shap_value": -0.012842005248358334
+      },
+      {
+        "feature": "corrente_media_a",
+        "shap_value": 0.012651825142100727
+      },
+      {
+        "feature": "impulsi_anomali_24h",
+        "shap_value": 0.009450037071821809
+      },
+      {
+        "feature": "rumore_medio_db",
+        "shap_value": 0.00866320145799002
+      },
+      {
+        "feature": "vibrazione_picco_mm_s",
+        "shap_value": 0.008147838395312985
+      },
+      {
+        "feature": "picco_carico_pct",
+        "shap_value": 0.008016641123638705
+      },
+      {
+        "feature": "livello_lubrificante_pct",
+        "shap_value": 0.007946406568690407
+      },
+      {
+        "feature": "cicli_avvio_totali",
+        "shap_value": 0.007122032724050413
+      },
+      {
+        "feature": "temperatura_olio_media_c",
+        "shap_value": -0.0064420359531575395
+      },
+      {
+        "feature": "picco_temperatura_24h_c",
+        "shap_value": 0.003877923333839856
+      },
+      {
+        "feature": "temperatura_cuscinetto_media_c",
+        "shap_value": -0.0036705521511123836
+      },
+      {
+        "feature": "oscillazione_velocita_pct",
+        "shap_value": -0.0033562819607090527
+      },
+      {
+        "feature": "allarmi_precedenti_30g",
+        "shap_value": 0.0025859307941793384
+      },
+      {
+        "feature": "minuti_sopra_soglia_termica_24h",
+        "shap_value": -0.0023149052295438383
+      },
+      {
+        "feature": "interventi_rinviati_90g",
+        "shap_value": -0.00010399306537255759
+      }
+    ]
+  }
+}
