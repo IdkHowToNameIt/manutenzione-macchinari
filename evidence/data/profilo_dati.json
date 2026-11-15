@@ -1,0 +1,482 @@
+{
+  "dataset_path": "data-input/dataset/dataset.csv",
+  "dataset_fingerprint": "af700d09fac13f09e5b0b8f8713cc0c9d3dca433a8f53c50273fe4647d1c5f3d",
+  "row_count": 1000,
+  "feature_count": 30,
+  "feature_schema_version": "1.0",
+  "feature_schema_fingerprint": "f6fc3f70fa153777a141faee4100bba8591e5aef4f71d6a025c9c97998eb177a",
+  "class_counts": {
+    "train": {
+      "0": 501,
+      "1": 299
+    },
+    "validation": {
+      "0": 125,
+      "1": 75
+    }
+  },
+  "feature_statistics": [
+    {
+      "position": 1,
+      "name": "temperatura_cuscinetto_media_c",
+      "unit": "C",
+      "integer": false,
+      "simulation_range": [
+        20.0,
+        110.0
+      ],
+      "train_min": 29.288,
+      "train_max": 91.569,
+      "train_mean": 58.19309499999999,
+      "train_std": 9.945133457298349
+    },
+    {
+      "position": 2,
+      "name": "temperatura_motore_media_c",
+      "unit": "C",
+      "integer": false,
+      "simulation_range": [
+        20.0,
+        120.0
+      ],
+      "train_min": 20.264,
+      "train_max": 99.558,
+      "train_mean": 65.4428975,
+      "train_std": 11.929313169227044
+    },
+    {
+      "position": 3,
+      "name": "temperatura_olio_media_c",
+      "unit": "C",
+      "integer": false,
+      "simulation_range": [
+        15.0,
+        95.0
+      ],
+      "train_min": 20.134,
+      "train_max": 70.842,
+      "train_mean": 48.139877500000004,
+      "train_std": 7.870742103353009
+    },
+    {
+      "position": 4,
+      "name": "picco_temperatura_24h_c",
+      "unit": "C",
+      "integer": false,
+      "simulation_range": [
+        35.0,
+        140.0
+      ],
+      "train_min": 38.866,
+      "train_max": 116.251,
+      "train_mean": 78.67524625,
+      "train_std": 11.81240638145382
+    },
+    {
+      "position": 5,
+      "name": "incremento_temperatura_24h_c",
+      "unit": "C",
+      "integer": false,
+      "simulation_range": [
+        -10.0,
+        25.0
+      ],
+      "train_min": -10.0,
+      "train_max": 14.502,
+      "train_mean": 3.00666,
+      "train_std": 3.8690922519888304
+    },
+    {
+      "position": 6,
+      "name": "minuti_sopra_soglia_termica_24h",
+      "unit": "minuti",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        350.0
+      ],
+      "train_min": 0.0,
+      "train_max": 120.114,
+      "train_mean": 41.204673750000005,
+      "train_std": 26.851383413565696
+    },
+    {
+      "position": 7,
+      "name": "vibrazione_rms_mm_s",
+      "unit": "mm/s",
+      "integer": false,
+      "simulation_range": [
+        0.1,
+        10.0
+      ],
+      "train_min": 0.1,
+      "train_max": 6.474,
+      "train_mean": 3.0145325,
+      "train_std": 1.008703143369619
+    },
+    {
+      "position": 8,
+      "name": "vibrazione_picco_mm_s",
+      "unit": "mm/s",
+      "integer": false,
+      "simulation_range": [
+        0.5,
+        20.0
+      ],
+      "train_min": 0.5,
+      "train_max": 13.312,
+      "train_mean": 6.036343750000001,
+      "train_std": 1.9933594885483996
+    },
+    {
+      "position": 9,
+      "name": "rumore_medio_db",
+      "unit": "dB",
+      "integer": false,
+      "simulation_range": [
+        40.0,
+        110.0
+      ],
+      "train_min": 49.297,
+      "train_max": 94.85,
+      "train_mean": 70.10279249999999,
+      "train_std": 7.045311382184875
+    },
+    {
+      "position": 10,
+      "name": "oscillazione_velocita_pct",
+      "unit": "%",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        15.0
+      ],
+      "train_min": 0.0,
+      "train_max": 9.522,
+      "train_mean": 3.0677499999999998,
+      "train_std": 1.8627111658816027
+    },
+    {
+      "position": 11,
+      "name": "impulsi_anomali_24h",
+      "unit": "conteggio",
+      "integer": true,
+      "simulation_range": [
+        0.0,
+        50.0
+      ],
+      "train_min": 0.0,
+      "train_max": 25.0,
+      "train_mean": 8.06,
+      "train_std": 4.788413098303028
+    },
+    {
+      "position": 12,
+      "name": "asimmetria_vibrazioni_pct",
+      "unit": "%",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        45.0
+      ],
+      "train_min": 0.0,
+      "train_max": 30.06,
+      "train_mean": 12.07429875,
+      "train_std": 5.856622274143898
+    },
+    {
+      "position": 13,
+      "name": "ore_utilizzo_totali",
+      "unit": "ore",
+      "integer": false,
+      "simulation_range": [
+        100.0,
+        40000.0
+      ],
+      "train_min": 100.0,
+      "train_max": 28876.636,
+      "train_mean": 11746.258365,
+      "train_std": 4876.541564796181
+    },
+    {
+      "position": 14,
+      "name": "ore_da_cambio_cuscinetto",
+      "unit": "ore",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        8000.0
+      ],
+      "train_min": 0.0,
+      "train_max": 5380.333,
+      "train_mean": 1973.07807375,
+      "train_std": 1088.1529381998519
+    },
+    {
+      "position": 15,
+      "name": "ore_da_cambio_olio",
+      "unit": "ore",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        2200.0
+      ],
+      "train_min": 0.0,
+      "train_max": 1349.152,
+      "train_mean": 495.23192750000004,
+      "train_std": 260.84962554131596
+    },
+    {
+      "position": 16,
+      "name": "particelle_olio_ppm",
+      "unit": "ppm",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        90.0
+      ],
+      "train_min": 0.0,
+      "train_max": 47.498,
+      "train_mean": 21.549988749999997,
+      "train_std": 9.510356708011715
+    },
+    {
+      "position": 17,
+      "name": "cicli_avvio_totali",
+      "unit": "conteggio",
+      "integer": true,
+      "simulation_range": [
+        10.0,
+        12000.0
+      ],
+      "train_min": 10.0,
+      "train_max": 6749.0,
+      "train_mean": 2940.575,
+      "train_std": 1281.990112822638
+    },
+    {
+      "position": 18,
+      "name": "spessore_residuo_componente_mm",
+      "unit": "mm",
+      "integer": false,
+      "simulation_range": [
+        1.0,
+        12.0
+      ],
+      "train_min": 1.537,
+      "train_max": 10.099,
+      "train_mean": 6.0657499999999995,
+      "train_std": 1.482374091617902
+    },
+    {
+      "position": 19,
+      "name": "carico_medio_pct",
+      "unit": "%",
+      "integer": false,
+      "simulation_range": [
+        10.0,
+        100.0
+      ],
+      "train_min": 11.05,
+      "train_max": 100.0,
+      "train_mean": 64.61323250000001,
+      "train_std": 15.19450442449321
+    },
+    {
+      "position": 20,
+      "name": "picco_carico_pct",
+      "unit": "%",
+      "integer": false,
+      "simulation_range": [
+        30.0,
+        100.0
+      ],
+      "train_min": 47.568,
+      "train_max": 100.0,
+      "train_mean": 79.92503125,
+      "train_std": 10.067747554456927
+    },
+    {
+      "position": 21,
+      "name": "corrente_media_a",
+      "unit": "A",
+      "integer": false,
+      "simulation_range": [
+        2.0,
+        45.0
+      ],
+      "train_min": 2.038,
+      "train_max": 34.178,
+      "train_mean": 17.96592875,
+      "train_std": 5.1571679433748745
+    },
+    {
+      "position": 22,
+      "name": "ore_marcia_ultime_24h",
+      "unit": "ore",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        24.0
+      ],
+      "train_min": 1.089,
+      "train_max": 24.0,
+      "train_mean": 13.8405325,
+      "train_std": 4.121022280508048
+    },
+    {
+      "position": 23,
+      "name": "avvii_ultime_24h",
+      "unit": "conteggio",
+      "integer": true,
+      "simulation_range": [
+        0.0,
+        60.0
+      ],
+      "train_min": 0.0,
+      "train_max": 40.0,
+      "train_mean": 14.86625,
+      "train_std": 6.9964891865492085
+    },
+    {
+      "position": 24,
+      "name": "pressione_media_bar",
+      "unit": "bar",
+      "integer": false,
+      "simulation_range": [
+        1.0,
+        14.0
+      ],
+      "train_min": 2.15,
+      "train_max": 12.017,
+      "train_mean": 6.9250125,
+      "train_std": 1.53532125379145
+    },
+    {
+      "position": 25,
+      "name": "giorni_da_ultima_manutenzione",
+      "unit": "giorni",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        180.0
+      ],
+      "train_min": 0.0,
+      "train_max": 136.0,
+      "train_mean": 45.67125,
+      "train_std": 23.820068711855136
+    },
+    {
+      "position": 26,
+      "name": "interventi_rinviati_90g",
+      "unit": "conteggio",
+      "integer": true,
+      "simulation_range": [
+        0.0,
+        10.0
+      ],
+      "train_min": 0.0,
+      "train_max": 7.0,
+      "train_mean": 2.05125,
+      "train_std": 1.4269279720784789
+    },
+    {
+      "position": 27,
+      "name": "allarmi_precedenti_30g",
+      "unit": "conteggio",
+      "integer": true,
+      "simulation_range": [
+        0.0,
+        30.0
+      ],
+      "train_min": 0.0,
+      "train_max": 13.0,
+      "train_mean": 5.10875,
+      "train_std": 2.8743561779118467
+    },
+    {
+      "position": 28,
+      "name": "ore_fermo_precedenti_90g",
+      "unit": "ore",
+      "integer": false,
+      "simulation_range": [
+        0.0,
+        40.0
+      ],
+      "train_min": 0.0,
+      "train_max": 17.486,
+      "train_mean": 6.2184687499999995,
+      "train_std": 3.6593892542367557
+    },
+    {
+      "position": 29,
+      "name": "manutenzioni_programmate_completate_pct",
+      "unit": "%",
+      "integer": false,
+      "simulation_range": [
+        20.0,
+        100.0
+      ],
+      "train_min": 45.081,
+      "train_max": 100.0,
+      "train_mean": 79.90572,
+      "train_std": 11.389056144786537
+    },
+    {
+      "position": 30,
+      "name": "livello_lubrificante_pct",
+      "unit": "%",
+      "integer": false,
+      "simulation_range": [
+        5.0,
+        100.0
+      ],
+      "train_min": 16.268,
+      "train_max": 100.0,
+      "train_mean": 65.09402625000001,
+      "train_std": 15.028605520325595
+    }
+  ],
+  "checks": [
+    "file presente e non vuoto",
+    "intestazione presente e senza colonne duplicate",
+    "record_id univoco e non mancante",
+    "valori numerici finiti su tutte le 30 feature",
+    "target limitato a 0 e 1",
+    "split limitato a train e validation",
+    "target e record_id esclusi dalle feature",
+    "ordine delle feature allineato a config/feature_schema.json"
+  ],
+  "monitoring_requests": [
+    {
+      "request_id": "req_01",
+      "model_version": "v1",
+      "expected_status": 200,
+      "feature_count": 30,
+      "schema_problems": []
+    },
+    {
+      "request_id": "req_02",
+      "model_version": "v2",
+      "expected_status": 200,
+      "feature_count": 30,
+      "schema_problems": []
+    },
+    {
+      "request_id": "req_03",
+      "model_version": "v1",
+      "expected_status": 200,
+      "feature_count": 30,
+      "schema_problems": []
+    },
+    {
+      "request_id": "req_04",
+      "model_version": "v1",
+      "expected_status": 422,
+      "feature_count": 29,
+      "schema_problems": [
+        "attese 30 feature, ricevute 29"
+      ]
+    }
+  ]
+}

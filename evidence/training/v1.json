@@ -1,0 +1,48 @@
+{
+  "model_version": "v1",
+  "mlflow_run_id": "8707d4c4859f423c86a0ba9b007a8661",
+  "mlflow_experiment": "manutenzione-predittiva",
+  "mlflow_tracking_uri": "sqlite:///mlflow.db",
+  "registered_at": "2026-11-15T14:09:45+00:00",
+  "artifact_fingerprint": "6eea94e288ab41dbfa515a61efcce53507aecb71c9b56c5f564b2cd964eb9dc0",
+  "dataset_fingerprint": "af700d09fac13f09e5b0b8f8713cc0c9d3dca433a8f53c50273fe4647d1c5f3d",
+  "feature_schema_fingerprint": "f6fc3f70fa153777a141faee4100bba8591e5aef4f71d6a025c9c97998eb177a",
+  "model_family": "logistic_regression",
+  "hyperparameters": {
+    "C": 1.0,
+    "max_iter": 1000,
+    "solver": "lbfgs"
+  },
+  "evidence": {
+    "n_samples": 200,
+    "positive_rate_observed": 0.375,
+    "positive_rate_predicted": 0.22,
+    "accuracy": 0.665,
+    "recall_target_1": 0.3466666666666667,
+    "precision_target_1": 0.5909090909090909,
+    "f1_target_1": 0.4369747899159664,
+    "recall_target_0": 0.856,
+    "roc_auc": 0.7181866666666666,
+    "decision_threshold": 0.5,
+    "confusion_matrix": {
+      "labels": [
+        0,
+        1
+      ],
+      "matrix": [
+        [
+          107,
+          18
+        ],
+        [
+          49,
+          26
+        ]
+      ],
+      "true_negative": 107,
+      "false_positive": 18,
+      "false_negative": 49,
+      "true_positive": 26
+    }
+  }
+}
