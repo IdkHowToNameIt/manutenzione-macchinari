@@ -54,9 +54,9 @@ recall minimo sulla classe 1, non solo una buona accuratezza.
 | Persona | Attivita' principali |
 | --- | --- |
 | Matteo | Dati e training: lettore CSV, contratto feature, baseline v1, candidata v2 |
-| Livia | Servizio e telemetria: FastAPI, validazione, log, metriche, probe |
-| Andrea | Registro e rilascio: versioni, fingerprint, gate operativo, attivazione e rollback, Docker |
-| Nicolo | Documentazione e verifica: README, relazione, presentazione, revisione delle evidenze |
+| Andrea | Servizio e telemetria: FastAPI, validazione, log, metriche, probe |
+| Nicolo | Registro e rilascio: versioni, fingerprint, gate operativo, attivazione e rollback, Docker |
+| Livia | Documentazione e verifica: README, relazione, presentazione, revisione delle evidenze |
 
 Il dettaglio di compiti e revisioni incrociate e' in un documento interno del
 gruppo, non incluso nel repository.

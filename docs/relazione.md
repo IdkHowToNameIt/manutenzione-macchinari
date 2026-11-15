@@ -409,9 +409,9 @@ retraining periodico con lo stesso protocollo di gate.
 | Persona | Area | Revisione assegnata |
 | --- | --- | --- |
 | Matteo | Dati, training, baseline e candidata | riletta da Livia |
-| Livia | Servizio, telemetria, prove HTTP | riletta da Matteo |
-| Andrea | Registro, gate, attivazione/rollback, Docker | riletto da Nicolo |
-| Nicolo | README, relazione, presentazione, riepilogo evidenze | riletto da Andrea |
+| Andrea | Servizio, telemetria, prove HTTP | riletto da Matteo |
+| Nicolo | Registro, gate, attivazione/rollback, Docker | riletto da Andrea |
+| Livia | README, relazione, presentazione, riepilogo evidenze | riletto da Nicolo |
 
 Il dettaglio delle attivita' e delle checklist di revisione e' in un documento
 interno del gruppo, non pubblicato. La presentazione segue il percorso

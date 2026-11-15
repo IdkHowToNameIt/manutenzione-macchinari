@@ -263,7 +263,7 @@ richiesta incompleta 422. Evidenza: `evidence/serving/container_prova.json` e
 
 ## Gruppo
 
-Matteo (dati e training), Livia (servizio e telemetria), Andrea (registro e
-rilascio), Nicolo (documentazione e verifica). La divisione dei compiti e le
+Matteo (dati e training), Andrea (servizio e telemetria), Nicolo (registro e
+rilascio), Livia (documentazione e verifica). La divisione dei compiti e le
 revisioni incrociate sono descritte nella documentazione interna del gruppo,
 non inclusa nel repository.
