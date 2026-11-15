@@ -65,8 +65,9 @@ cartella del progetto:
 
 ```powershell
 uv venv .venv --python 3.12
-uv pip install --python .venv\Scripts\python.exe -r requirements.txt
-uv pip install --python .venv\Scripts\python.exe --no-deps -e .
+.venv\Scripts\activate
+uv pip install -r requirements.txt
+uv pip install --no-deps -e .
 ```
 
 In alternativa, con `venv` e `pip`: `python -m venv .venv`, attivazione, poi
@@ -74,34 +75,34 @@ In alternativa, con `venv` e `pip`: `python -m venv .venv`, attivazione, poi
 
 ## Riproduzione completa
 
-Eseguire gli script in ordine. Tutti leggono i percorsi da
-`config/project.yaml` e scrivono le evidenze in `evidence/`.
+Eseguire gli script in ordine, con l'ambiente attivo. Tutti leggono i percorsi
+da `config/project.yaml` e scrivono le evidenze in `evidence/`.
 
 ```powershell
 # S1 - controlli e profilo dei dati
-.venv\Scripts\python.exe scripts\01_verifica_dati.py
+python scripts\01_verifica_dati.py
 
 # S2 - baseline v1, run MLflow, prima attivazione
-.venv\Scripts\python.exe scripts\02_training_baseline_v1.py
+python scripts\02_training_baseline_v1.py
 
 # S3 - prova del contratto con client in-process
-.venv\Scripts\python.exe scripts\03_client_inprocess.py
+python scripts\03_client_inprocess.py
 
 # S4 - candidata v2, probe locale, gate di rilascio
-.venv\Scripts\python.exe scripts\04_training_candidata_v2.py
-.venv\Scripts\python.exe scripts\05_probe_servizio.py
-.venv\Scripts\python.exe scripts\06_gate_rilascio.py
+python scripts\04_training_candidata_v2.py
+python scripts\05_probe_servizio.py
+python scripts\06_gate_rilascio.py
 
 # S5 - attivazione v2, rollback a v1, evidenze della sequenza
-.venv\Scripts\python.exe scripts\07_attivazione_rollback.py
+python scripts\07_attivazione_rollback.py
 
 # Analisi e sintesi
-.venv\Scripts\python.exe scripts\08_spiegazioni_shap.py
-.venv\Scripts\python.exe scripts\09_controllo_drift.py
-.venv\Scripts\python.exe scripts\10_riepilogo_evidenze.py
+python scripts\08_spiegazioni_shap.py
+python scripts\09_controllo_drift.py
+python scripts\10_riepilogo_evidenze.py
 
 # Test automatici
-.venv\Scripts\python.exe -m pytest
+python -m pytest
 ```
 
 Note di riproducibilita':
@@ -124,7 +125,7 @@ Note di riproducibilita':
 Avvio locale (porta 8000, host da configurazione):
 
 ```powershell
-.venv\Scripts\python.exe -m manutenzione.serving.app
+python -m manutenzione.serving.app
 ```
 
 Documentazione interattiva su `http://127.0.0.1:8000/docs`.
@@ -146,7 +147,7 @@ La risposta di `predict` contiene `prediction`, `probability_target_1`,
 Esempio con la prima richiesta del CSV:
 
 ```powershell
-.venv\Scripts\python.exe -c "import csv,json,httpx; row=next(csv.DictReader(open('data-input/requests/richieste_monitoraggio.csv',encoding='utf-8'))); print(httpx.post('http://127.0.0.1:8000/predict', json=json.loads(row['payload_json']), timeout=10).json())"
+python -c "import csv,json,httpx; row=next(csv.DictReader(open('data-input/requests/richieste_monitoraggio.csv',encoding='utf-8'))); print(httpx.post('http://127.0.0.1:8000/predict', json=json.loads(row['payload_json']), timeout=10).json())"
 ```
 
 Amministrazione e sicurezza:
@@ -211,7 +212,7 @@ Riepilogo sempre aggiornato: `evidence/riepilogo_metriche.md`.
 ## Test e CI
 
 ```powershell
-.venv\Scripts\python.exe -m pytest
+python -m pytest
 ```
 
 25 test coprono lettore e controlli dati, registro e fingerprint, contratto
@@ -223,9 +224,26 @@ push.
 
 ```powershell
 docker build -f docker/Dockerfile -t manutenzione-predittiva-api:1.0.0 .
-docker run --rm -p 8000:8000 manutenzione-predittiva-api:1.0.0
+docker run -d --name manutenzione-predittiva-api -p 8000:8000 manutenzione-predittiva-api:1.0.0
 # oppure
-docker compose -f docker/docker-compose.yml up --build
+docker compose -f docker/docker-compose.yml up --build -d
+```
+
+Con `-d` il container parte in background: il terminale resta libero e si può
+continuare a lavorare. Per seguire i log: `docker logs -f manutenzione-predittiva-api`.
+
+Al termine del progetto, fermare e rimuovere container e immagini:
+
+```powershell
+# se hai usato docker run
+docker stop manutenzione-predittiva-api
+docker rm manutenzione-predittiva-api
+docker rmi manutenzione-predittiva-api:1.0.0
+```
+
+```powershell
+# se hai usato docker compose: ferma e rimuove container, rete e immagini locali
+docker compose -f docker/docker-compose.yml down --rmi local
 ```
 
 Prova realmente eseguita il 2026-11-15 con Docker 29.5.3 (container Linux):
@@ -239,7 +257,9 @@ richiesta incompleta 422. Evidenza: `evidence/serving/container_prova.json` e
 - Versione attiva: **v1**; versione precedente: **v2**; transizioni registrate:
   attivazione iniziale, attivazione v2, rollback a v1.
 - Processi e container avviati durante le prove sono stati arrestati; nessun
-  servizio resta in ascolto.
+  servizio resta in ascolto. Per ripetere la pulizia in locale usare i comandi
+  della sezione Docker (`docker stop`, `docker rm`, `docker rmi` oppure
+  `docker compose down --rmi local`).
 - Restano nel repository: CSV assegnati, sorgenti, dipendenze con versioni,
   modelli con metadati, log, evidenze e documentazione.
 - `mlruns/` e `mlflow.db` sono esclusi dal versionamento ma possono essere
